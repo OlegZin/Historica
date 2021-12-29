@@ -64,13 +64,10 @@
     export default {
         name: 'MenuScreen',
 
-        data: () => ({
-            ages: ['stone_age', 'myth_age', 'middle_age', 'steam_age', 'progressive_age', 'star_age'],
-        }),
-
         computed: {
             ...mapState({
                 isGameReady: (state) => state.isGameReady,
+                ages: (state) => state.ages,
             }),
         },
 

@@ -37,8 +37,6 @@ module.exports = {
         //
         //
         // Vue
-        'vue/custom-event-name-casing': ['warn'],
-        'vue/no-mutating-props': ['warn'],
         'vue/order-in-components': ['error'],
         'vue/script-indent': [
             'error', 4, {

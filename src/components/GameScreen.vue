@@ -2,16 +2,20 @@
     <div>
       <v-app-bar height="40" flat app dark>
           <v-row>
-            <v-col
+            <template
               v-for="(res, key, index) in resources"
-              :key="index"
-              class="text-caption"
             >
-            <v-icon>
-              {{ res.icon }}
-            </v-icon>
-              {{ res.count }}
-            </v-col>
+              <v-col
+                v-if="res.visible"
+                :key="index"
+                class="text-caption"
+              >
+              <v-icon>
+                {{ res.icon }}
+              </v-icon>
+                {{ res.count }}
+              </v-col>
+            </template>
           </v-row>
         <v-spacer/>
         <v-btn x-small @click="setLang('ru')" text>rus</v-btn>
@@ -29,7 +33,14 @@
         computed: {
             ...mapState({
                 resources: (state) => state.resources,
+                isGameReady: (state) => state.isGameReady,
             }),
+        },
+
+        mounted() {
+            if (!this.isGameReady) {
+                this.$router.push({ name: 'Menu'})
+            }
         },
 
         methods: {
