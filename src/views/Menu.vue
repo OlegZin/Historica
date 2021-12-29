@@ -1,17 +1,17 @@
 <template>
     <div>
-        !!!
-        <Menu />
+        <MenuScreen />
     </div>
 </template>
 
 <script>
-    import Menu from '@/components/Menu.vue'
+    import MenuScreen from '@/components/MenuScreen'
 
     export default {
         name: 'Menu',
+
         components: {
-            Menu,
+            MenuScreen,
         },
     }
 </script>
