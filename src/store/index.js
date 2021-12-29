@@ -11,41 +11,45 @@ export default new Vuex.Store({
         isGameCreated: false,
         isGameReady: false,
         resources: {
-            order: {
-                count: 1000,
-                icon: 'mdi-script-outline',
-            },
             people: {
                 count: 100,
                 icon: 'mdi-human-handsdown',
-            },
-            gold: {
-                count: 100,
-                icon: 'mdi-gold',
-            },
-            wood: {
-                count: 100,
-                icon: 'mdi-pine-tree',
-            },
-            stone: {
-                count: 100,
-                icon: 'mdi-wall',
-            },
-            ore: {
-                count: 100,
-                icon: 'mdi-anvil',
+                visible: true,
             },
             food: {
                 count: 100,
                 icon: 'mdi-food-drumstick',
+                visible: true,
+            },
+            wood: {
+                count: 100,
+                icon: 'mdi-pine-tree',
+                visible: true,
+            },
+            stone: {
+                count: 100,
+                icon: 'mdi-wall',
+                visible: true,
+            },
+            ore: {
+                count: 100,
+                icon: 'mdi-anvil',
+                visible: true,
+            },
+            gold: {
+                count: 100,
+                icon: 'mdi-gold',
+                visible: true,
             },
             mana: {
                 count: 100,
                 icon: 'mdi-flask-round-bottom',
+                visible: true,
             },
             artefact: {
                 count: 3,
                 icon: 'mdi-deathly-hallows',
+                visible: true,
             },
         },
     },
