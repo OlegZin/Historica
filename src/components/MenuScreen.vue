@@ -23,40 +23,16 @@
                                     </v-list-item-title>
                                 </template>
 
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('stone_age') }}</v-card-subtitle>
-                                    </v-card>
-                                </v-list-item>
-
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('myth_age') }}</v-card-subtitle>
-                                    </v-card>
-                                </v-list-item>
-
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('middle_age') }}</v-card-subtitle>
-                                    </v-card>
-                                </v-list-item>
-
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('steam_age') }}</v-card-subtitle>
-                                    </v-card>
-                                </v-list-item>
-
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('progressive_age') }}</v-card-subtitle>
-                                    </v-card>
-                                </v-list-item>
-
-                                <v-list-item>
-                                    <v-card flat>
-                                        <v-card-subtitle>{{ $t('star_age') }}</v-card-subtitle>
-                                    </v-card>
+                                <v-list-item
+                                    v-for="(age, key) in ages"
+                                    :key="key"
+                                >
+                                    <v-list-item-content
+                                        class="pl-5"
+                                        @click="newGame(age)"
+                                    >
+                                        {{ $t(age) }}
+                                    </v-list-item-content>
                                 </v-list-item>
                             </v-list-group>
 
@@ -86,6 +62,10 @@
     export default {
         name: 'MenuScreen',
 
+        data: () => ({
+            ages: ['stone_age', 'myth_age', 'middle_age', 'steam_age', 'progressive_age', 'star_age'],
+        }),
+
         methods: {
             changeLang() {
                 if (this.$i18n.locale === 'ru') {
@@ -93,6 +73,10 @@
                 } else if (this.$i18n.locale === 'en') {
                     this.$i18n.locale = 'ru'
                 }
+            },
+            newGame(age) {
+                this.$store.dispatch('newGame', age)
+                this.$router.push({ name: 'Game' })
             },
         },
     }
