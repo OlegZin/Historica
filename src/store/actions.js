@@ -8,10 +8,10 @@ const actions = {
                 commit('setRes', { name: 'food', count: 100, visible: true })
                 commit('setRes', { name: 'wood', count: 0, visible: true })
                 commit('setRes', { name: 'stone', count: 0, visible: true })
-                commit('setRes', { name: 'ore', count: 0 })
-                commit('setRes', { name: 'gold', count: 0 })
-                commit('setRes', { name: 'mana', count: 0 })
-                commit('setRes', { name: 'artefact', count: 0 })
+                commit('setRes', { name: 'ore', visible: false })
+                commit('setRes', { name: 'gold', visible: false })
+                commit('setRes', { name: 'mana', visible: false })
+                commit('setRes', { name: 'artefact', visible: false })
         }
 
         commit('setGameCreated', false)
