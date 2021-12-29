@@ -59,12 +59,30 @@
 </template>
 
 <script>
+    import { mapState } from 'vuex'
+
     export default {
         name: 'MenuScreen',
 
         data: () => ({
             ages: ['stone_age', 'myth_age', 'middle_age', 'steam_age', 'progressive_age', 'star_age'],
         }),
+
+        computed: {
+            ...mapState({
+                isGameReady: (state) => state.isGameReady,
+            }),
+        },
+
+        watch: {
+            isGameReady: {
+                handler() {
+                    if (this.isGameReady) {
+                        this.$router.push({ name: 'Game' })
+                    }
+                },
+            },
+        },
 
         methods: {
             changeLang() {
@@ -76,9 +94,9 @@
             },
             newGame(age) {
                 this.$store.dispatch('newGame', age)
-                this.$router.push({ name: 'Game' })
             },
         },
+
     }
 </script>
 
