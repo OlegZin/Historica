@@ -1,7 +1,9 @@
 const actions = {
-    newGame({ commit }, age) {
-        commit('setGameCreated', true)
+    newGame({ commit }, { age, stage }) {
+        commit('setVar', { name: 'isGameCreated', value: true})
+        commit('setVar', { name: 'gameStage', value: stage})
 
+        // set resources
         switch (age) {
             case 'stone_age':
                 commit('setRes', { name: 'people', count: 1, visible: true })
@@ -14,8 +16,10 @@ const actions = {
                 commit('setRes', { name: 'artefact', visible: false })
         }
 
-        commit('setGameCreated', false)
-        commit('setGameReady', true)
+        // set gamefield
+
+        commit('setVar', { name: 'isGameCreated', value: true})
+        commit('setVar', { name: 'isGameReady', value: true})
     },
 }
 

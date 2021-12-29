@@ -82,7 +82,7 @@
         },
 
         mounted() {
-            this.$store.commit('setGameReady', false)
+            this.$store.commit('setVar', { name: 'isGameReady', value: false})
         },
 
         methods: {
@@ -94,7 +94,7 @@
                 }
             },
             newGame(age) {
-                this.$store.dispatch('newGame', age)
+                this.$store.dispatch('newGame', { age, stage: 1 })
             },
         },
 

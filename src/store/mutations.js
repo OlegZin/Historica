@@ -1,18 +1,19 @@
 const mutations = {
-    setRes(state, { name, count = 0, visible}) {
-        state.resources[name].count = count
+    setRes(state, { name, count = 0, max, visible}) {
+
+        if (max !== undefined && max !== null) {
+            state.resources[name].max = max
+        }
+
+        state.resources[name].count = Math.min(count, state.resources[name].max)
 
         if (visible !== undefined && visible !== null) {
             state.resources[name].visible = visible
         }
     },
 
-    setGameCreated(state, value) {
-        state.isGameCreated = value
-    },
-
-    setGameReady(state, value) {
-        state.isGameReady = value
+    setVar(state, { name, value }) {
+        state[name] = value
     },
 }
 
