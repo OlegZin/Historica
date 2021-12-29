@@ -1,5 +1,78 @@
 <template>
-    <p>{{ $t('hello') }}</p>
+    <v-card max-width="500">
+        <v-card-title>{{ $t('historica') }}</v-card-title>
+        <v-card-text>
+            <v-list flat>
+                <v-list-item-group>
+
+                    <v-list-group>
+                        <template v-slot:activator>
+                            <v-list-item-icon>
+                                <v-icon>mdi-alert-decagram</v-icon>
+                            </v-list-item-icon>
+                            <v-list-item-title>
+                                {{ $t('new_game') }}
+                            </v-list-item-title>
+                        </template>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('stone_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('myth_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('middle_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('steam_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('progressive_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+
+                        <v-list-item>
+                            <v-card flat>
+                                <v-card-subtitle>{{ $t('star_age') }}</v-card-subtitle>
+                            </v-card>
+                        </v-list-item>
+                    </v-list-group>
+
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-content-save-settings</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>
+                            {{ $t('continue') }}
+                        </v-list-item-title>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-earth</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ $t('language') }}</v-list-item-title>
+                            <v-list-item-subtitle>Русский</v-list-item-subtitle>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list-item-group>
+            </v-list>
+        </v-card-text>
+    </v-card>
 </template>
 
 <script>
@@ -11,10 +84,28 @@
 <i18n>
 {
   "en": {
-    "hello": "Hello i18n in SFC!"
+    "historica": "Historica",
+    "new_game": "New game",
+    "continue": "Continue",
+    "language": "Language",
+    "stone_age": "Stone age",
+    "myth_age": "Mythic age",
+    "middle_age": "Middle age",
+    "steam_age": "Steam age",
+    "progressive_age": "Progressive age",
+    "star_age": "Star age"
   },
   "ru": {
-    "hello": "Здорово, ёпта!"
+    "historica": "Историка",
+    "new_game": "Новая игра",
+    "continue": "Продолжить",
+    "language": "Язык",
+    "stone_age": "Каменный век",
+    "myth_age": "Век мифов",
+    "middle_age": "Средние века",
+    "steam_age": "Паровой век",
+    "progressive_age": "Прогрессивный век",
+    "star_age": "Космический век"
   }
 }
 </i18n>
