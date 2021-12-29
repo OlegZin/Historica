@@ -14,10 +14,21 @@ const actions = {
                 commit('setRes', { name: 'gold', visible: false })
                 commit('setRes', { name: 'mana', visible: false })
                 commit('setRes', { name: 'artefact', visible: false })
+                break
         }
 
         // set gamefield
+        switch (age) {
+            case 'stone_age':
+                switch (stage) {
+                    case 1: 
+                        commit('initField', { heigth: 10, width: 10 })
+                        break
+                }
+                break
+        }
 
+        // finish initialization
         commit('setVar', { name: 'isGameCreated', value: true})
         commit('setVar', { name: 'isGameReady', value: true})
     },

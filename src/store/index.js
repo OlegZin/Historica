@@ -9,6 +9,11 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         ages: ['stone_age', 'myth_age', 'middle_age', 'steam_age', 'progressive_age', 'star_age'],
+        field: {
+            height: 0,
+            width: 0,
+            cells: [],
+        },
         gameStage: null,
         isGameCreated: false,
         isGameReady: false,

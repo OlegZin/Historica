@@ -12,6 +12,12 @@ const mutations = {
         }
     },
 
+    initField(state, { width, height }) {
+        state.field.width = width
+        state.field.height = height
+        state.field.cells = Array.from(Array(width), () => new Array(height).fill(null))
+    },
+
     setVar(state, { name, value }) {
         state[name] = value
     },
