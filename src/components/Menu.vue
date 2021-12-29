@@ -1,10 +1,10 @@
 <template>
-  <p>{{ $t('hello') }}</p>
+    <p>{{ $t('hello') }}</p>
 </template>
 
 <script>
     export default {
-        name: 'HelloI18n',
+        name: 'Menu',
     }
 </script>
 
@@ -12,6 +12,9 @@
 {
   "en": {
     "hello": "Hello i18n in SFC!"
+  },
+  "ru": {
+    "hello": "Здорово, ёпта!"
   }
 }
 </i18n>
