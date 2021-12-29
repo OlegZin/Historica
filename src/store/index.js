@@ -17,6 +17,12 @@ export default new Vuex.Store({
                 icon: 'mdi-human-handsdown',
                 visible: true,
             },
+            health: {
+                count: 43,
+                max: 100,
+                icon: 'mdi-heart',
+                visible: true,
+            },
             food: {
                 count: 100,
                 icon: 'mdi-food-drumstick',

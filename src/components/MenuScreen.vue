@@ -81,6 +81,10 @@
             },
         },
 
+        mounted() {
+            this.$store.commit('setGameReady', false)
+        },
+
         methods: {
             changeLang() {
                 if (this.$i18n.locale === 'ru') {
