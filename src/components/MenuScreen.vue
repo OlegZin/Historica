@@ -2,7 +2,13 @@
     <v-container fill-height fluid class="pa-0">
         <v-row align="center" justify="center">
             <v-card width="500">
-                <v-card-title>{{ $t('historica') }}</v-card-title>
+                <v-toolbar
+                    color="light-blue"
+                    dark
+                >
+                    <v-toolbar-title>{{ $t('historica') }}</v-toolbar-title>
+                </v-toolbar>
+
                 <v-card-text>
                     <v-list flat>
                         <v-list-item-group>
@@ -66,10 +72,7 @@
                                 <v-list-item-icon>
                                     <v-icon>mdi-earth</v-icon>
                                 </v-list-item-icon>
-                                <v-list-item-content>
-                                    <v-list-item-title>{{ $t('language') }}</v-list-item-title>
-                                    <v-list-item-subtitle>Русский</v-list-item-subtitle>
-                                </v-list-item-content>
+                                <v-list-item-title @click="changeLang">{{ $t('language') }}</v-list-item-title>
                             </v-list-item>
                         </v-list-item-group>
                     </v-list>
@@ -82,6 +85,16 @@
 <script>
     export default {
         name: 'MenuScreen',
+
+        methods: {
+            changeLang() {
+                if (this.$i18n.locale === 'ru') {
+                    this.$i18n.locale = 'en'
+                } else if (this.$i18n.locale === 'en') {
+                    this.$i18n.locale = 'ru'
+                }
+            },
+        },
     }
 </script>
 
