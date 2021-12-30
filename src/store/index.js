@@ -13,6 +13,18 @@ export default new Vuex.Store({
             height: 0,
             width: 0,
             cells: [],
+            /*
+            cell:
+                {
+                    fog: Number,
+                    type: String,
+                    object: {
+                        count: Number,
+                        type: String,
+                        level: Number,
+                    },
+                }
+            */
         },
         gameStage: null,
         isGameCreated: false,

@@ -4,16 +4,21 @@ const actions = {
         commit('setVar', { name: 'gameStage', value: stage})
 
         // set resources
+        commit('setRes', { name: 'people', count: 0, visible: false })
+        commit('setRes', { name: 'food', count: 0, visible: false })
+        commit('setRes', { name: 'wood', count: 0, visible: false })
+        commit('setRes', { name: 'stone', count: 0, visible: false })
+        commit('setRes', { name: 'ore', count: 0, visible: false })
+        commit('setRes', { name: 'gold', count: 0, visible: false })
+        commit('setRes', { name: 'mana', count: 0, visible: false })
+        commit('setRes', { name: 'artefact', count: 0, visible: false })
+
         switch (age) {
             case 'stone_age':
                 commit('setRes', { name: 'people', count: 1, visible: true })
                 commit('setRes', { name: 'food', count: 100, visible: true })
                 commit('setRes', { name: 'wood', count: 0, visible: true })
                 commit('setRes', { name: 'stone', count: 0, visible: true })
-                commit('setRes', { name: 'ore', visible: false })
-                commit('setRes', { name: 'gold', visible: false })
-                commit('setRes', { name: 'mana', visible: false })
-                commit('setRes', { name: 'artefact', visible: false })
                 break
         }
 
@@ -22,7 +27,18 @@ const actions = {
             case 'stone_age':
                 switch (stage) {
                     case 1: 
-                        commit('initField', { heigth: 10, width: 10 })
+                        const height = 5
+                        const width = 5
+                        const type = 'field'
+                        const object = { type: 'tree', count: 100 }
+
+                        commit('initField', { height, width })
+
+                        for (let x = 0; x <= width - 1; x++) {
+                            for (let y = 0; y <= height - 1; y++) {
+                                commit('setFieldCell', { x, y, type, object })
+                            }
+                        }
                         break
                 }
                 break

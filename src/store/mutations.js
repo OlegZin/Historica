@@ -18,6 +18,35 @@ const mutations = {
         state.field.cells = Array.from(Array(width), () => new Array(height).fill(null))
     },
 
+    setFieldCell(state, { x = 0, y = 0, fog, type, object }) {
+        if ((state.field.width - 1 < x) || (state.field.height - 1 < y)) {
+            return
+        }
+
+        if (!state.field.cells[x][y]) {
+            state.field.cells[x][y] = {}
+        }
+        
+        if (fog) {
+            state.field.cells[x][y].fog = fog
+        }
+        if (type) {
+            state.field.cells[x][y].type = type
+        }
+        if (object) {
+            state.field.cells[x][y].object = object
+        }
+        
+    },
+
+    setFieldCellObject(state, { x = 0, y = 0, name, value }) {
+        if ((state.field.width - 1 < x) || (state.field.height - 1 < y) || !state.field[x][y].object) {
+            return
+        }
+
+        state.field[x][y].object[name] = value ? value : state.field[x][y].object[name]
+    },
+
     setVar(state, { name, value }) {
         state[name] = value
     },

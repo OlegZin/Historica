@@ -1,6 +1,7 @@
 <template>
     <div>
         <ResourcesPanel />
+        <pre>{{field}}</pre>
     </div>
 </template>
 
@@ -19,6 +20,7 @@
         computed: {
             ...mapState({
                 isGameReady: (state) => state.isGameReady,
+                field: (state) => state.field,
             }),
         },
 
