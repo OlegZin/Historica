@@ -22,7 +22,7 @@
     import { mapState } from 'vuex'
 
     export default {
-        name: 'GameScreen',
+        name: 'ResourcesPanel',
 
         computed: {
             ...mapState({

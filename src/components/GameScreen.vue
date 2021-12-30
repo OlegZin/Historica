@@ -1,19 +1,21 @@
 <template>
     <div>
         <ResourcesPanel />
-        <pre>{{field}}</pre>
+        <GameField />
     </div>
 </template>
 
 <script>
     import { mapState } from 'vuex'
 
+    import GameField from '@/components/GameScreen/GameField'
     import ResourcesPanel from '@/components/GameScreen/ResourcesPanel'
 
     export default {
         name: 'GameScreen',
 
         components: {
+            GameField,
             ResourcesPanel,
         },
 
