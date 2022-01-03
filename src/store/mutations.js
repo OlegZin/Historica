@@ -15,13 +15,24 @@ const mutations = {
     initField(state, { width, height }) {
         state.field.width = width
         state.field.height = height
-        state.field.cells = Array.from(Array(width), () => new Array(height).fill({}))
+        state.field.cells = Array.from(Array(width), () => new Array(height))
+    },
+
+    selectCell(state, cell) {
+        state.currentCell = cell
     },
 
     setFieldCell(state, { x = 0, y = 0, fog, type, object }) {
         if ((state.field.width - 1 < x) || (state.field.height - 1 < y)) {
             return
         }
+
+        if (!state.field.cells[x][y]) {
+            state.field.cells[x][y] = {}
+        }
+
+        state.field.cells[x][y].x = x
+        state.field.cells[x][y].y = y
         
         if (fog) {
             state.field.cells[x][y].fog = fog
@@ -32,7 +43,6 @@ const mutations = {
         if (object) {
             state.field.cells[x][y].object = object
         }
-        
     },
 
     setFieldCellObject(state, { x = 0, y = 0, name, value }) {

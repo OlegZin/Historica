@@ -9,6 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         ages: ['stone_age', 'myth_age', 'middle_age', 'steam_age', 'progressive_age', 'star_age'],
+        currentCell: null,
         field: {
             height: 0,
             width: 0,
@@ -27,6 +28,14 @@ export default new Vuex.Store({
             */
         },
         gameStage: null,
+        icons: {
+            border: require('@/assets/gui/border.png'),
+            field: require('@/assets/grounds/field.png'),
+            flowers: require('@/assets/objects/flowers.png'),
+            grass: require('@/assets/objects/grass.png'),
+            oak: require('@/assets/objects/oak.gif'),
+            tree: require('@/assets/objects/tree.gif'),
+        },        
         isGameCreated: false,
         isGameReady: false,
         resources: {
@@ -85,6 +94,7 @@ export default new Vuex.Store({
                 visible: true,
             },
         },
+        rules: {},
     },
     mutations,
     actions,

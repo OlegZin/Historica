@@ -30,13 +30,34 @@ const actions = {
                         const height = 5
                         const width = 5
                         const type = 'field'
-                        const object = { type: 'tree', count: 100 }
+                        let object = null
+                        const params = (x, y, type, object) => {
+                            return {x, y, type, object}
+                        }
 
                         commit('initField', { height, width })
 
                         for (let x = 0; x <= width - 1; x++) {
+                            switch (x) {
+                                case 0:
+                                    object = { type: 'oak', count: 100 }
+                                    break
+                                case 1:
+                                    object = { type: 'tree', count: 100 }
+                                    break
+                                case 2:
+                                    object = { type: 'flowers', count: 100 }
+                                    break
+                                case 3:
+                                    object = { type: 'grass', count: 100 }
+                                    break
+                                default:
+                                    object = null
+                            }
+
                             for (let y = 0; y <= height - 1; y++) {
-                                commit('setFieldCell', { x, y, type, object })
+
+                                commit('setFieldCell', params(x, y, type, object))
                             }
                         }
                         break
@@ -48,6 +69,12 @@ const actions = {
         commit('setVar', { name: 'isGameCreated', value: true})
         commit('setVar', { name: 'isGameReady', value: true})
     },
+
+    objectAction(/*commit, object*/) {
+        //commit.state.currLocation = object.location // select location effect to
+        //const script = commit.state.Actions[object.type].action[object.level-1].action // get action
+        //eval(script) // exec action
+    },    
 }
 
 export default actions
