@@ -40,16 +40,7 @@ const actions = {
                         for (let x = 0; x <= width - 1; x++) {
                             switch (x) {
                                 case 0:
-                                    object = { type: 'oak', count: 100 }
-                                    break
-                                case 1:
-                                    object = { type: 'tree', count: 100 }
-                                    break
-                                case 2:
-                                    object = { type: 'flowers', count: 100 }
-                                    break
-                                case 3:
-                                    object = { type: 'grass', count: 100 }
+                                    object = { type: 'bear', count: 100 }
                                     break
                                 default:
                                     object = null

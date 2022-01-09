@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 import actions from './actions'
 import mutations from './mutations'
 
+import objects from './state/Objects'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -31,13 +33,22 @@ export default new Vuex.Store({
         icons: {
             border: require('@/assets/gui/border.png'),
             field: require('@/assets/grounds/field.png'),
-            flowers: require('@/assets/objects/flowers.png'),
-            grass: require('@/assets/objects/grass.png'),
-            oak: require('@/assets/objects/oak.gif'),
+
+            appletree: require('@/assets/objects/appletree.gif'),
+            bear: require('@/assets/objects/bear.gif'),
+            bigtree: require('@/assets/objects/bigtree.gif'),
+            bizon: require('@/assets/objects/bizon.gif'),
+            blackWolf: require('@/assets/objects/black_wolf.gif'),
+            grass: require('@/assets/objects/grass.gif'),
+            mushrooms: require('@/assets/objects/mushrooms.gif'),
+            stoneBrovn: require('@/assets/objects/stone_brovn.gif'),
+            stoneGray: require('@/assets/objects/stone_gray.gif'),
             tree: require('@/assets/objects/tree.gif'),
+            wolf: require('@/assets/objects/wolf.gif'),
         },        
         isGameCreated: false,
         isGameReady: false,
+        objects,
         resources: {
             people: {
                 count: 100,
@@ -51,9 +62,33 @@ export default new Vuex.Store({
                 max: 100,
                 visible: true,
             },
+            brain: {
+                count: 10,
+                icon: 'mdi-brain',
+                max: Number.MAX_SAFE_INTEGER,
+                visible: true,
+            },
             food: {
                 count: 100,
                 icon: 'mdi-food-drumstick',
+                max: Number.MAX_SAFE_INTEGER,
+                visible: true,
+            },
+            bone: { 
+                count: 0,
+                icon: 'mdi-bone',
+                max: Number.MAX_SAFE_INTEGER,
+                visible: true,
+            },
+            paw: {
+                count: 0,
+                icon: 'mdi-paw',
+                max: Number.MAX_SAFE_INTEGER,
+                visible: true,
+            },
+            grass: {
+                count: 0,
+                icon: 'mdi-grass',
                 max: Number.MAX_SAFE_INTEGER,
                 visible: true,
             },

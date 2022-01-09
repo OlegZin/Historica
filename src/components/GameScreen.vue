@@ -1,7 +1,15 @@
 <template>
     <div>
         <ResourcesPanel />
-        <GameField />
+        <v-row>
+            <v-col cols="auto">
+                <GameField />
+            </v-col>
+            <v-col cols="auto">
+                <ObjectPanel />
+            </v-col>
+        </v-row>
+        <pre>{{currentCell}}</pre>
     </div>
 </template>
 
@@ -9,6 +17,7 @@
     import { mapState } from 'vuex'
 
     import GameField from '@/components/GameScreen/GameField'
+    import ObjectPanel from '@/components/GameScreen/ObjectPanel'
     import ResourcesPanel from '@/components/GameScreen/ResourcesPanel'
 
     export default {
@@ -16,11 +25,13 @@
 
         components: {
             GameField,
+            ObjectPanel,
             ResourcesPanel,
         },
 
         computed: {
             ...mapState({
+                currentCell: (state) => state.currentCell,
                 isGameReady: (state) => state.isGameReady,
                 field: (state) => state.field,
             }),
