@@ -4,8 +4,12 @@ const actions = {
         commit('setVar', { name: 'gameStage', value: stage})
 
         // set resources
+        commit('setRes', { name: 'brain', count: 0, visible: false })
         commit('setRes', { name: 'people', count: 0, visible: false })
         commit('setRes', { name: 'food', count: 0, visible: false })
+        commit('setRes', { name: 'bone', count: 0, visible: false })
+        commit('setRes', { name: 'paw', count: 0, visible: false })
+        commit('setRes', { name: 'grass', count: 0, visible: false })
         commit('setRes', { name: 'wood', count: 0, visible: false })
         commit('setRes', { name: 'stone', count: 0, visible: false })
         commit('setRes', { name: 'ore', count: 0, visible: false })
@@ -15,10 +19,10 @@ const actions = {
 
         switch (age) {
             case 'stone_age':
+                commit('setRes', { name: 'brain', count: 0, visible: false })
                 commit('setRes', { name: 'people', count: 1, visible: true })
-                commit('setRes', { name: 'food', count: 100, visible: true })
-                commit('setRes', { name: 'wood', count: 0, visible: true })
-                commit('setRes', { name: 'stone', count: 0, visible: true })
+                commit('setRes', { name: 'health', count: 43, visible: true })
+                commit('setRes', { name: 'food', count: 8, visible: true })
                 break
         }
 
